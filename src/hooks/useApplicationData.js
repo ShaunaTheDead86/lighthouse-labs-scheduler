@@ -29,6 +29,27 @@ export default function useApplicationData () {
     })
   }, [])
 
+  function updateSpots () {
+    const interviews = []
+
+    for (const appointment of Object.values(state.appointments)) {
+      if (appointment.interview !== null) {
+        interviews.push(appointment.id)
+      }
+    }
+
+    for (const day of state.days) {
+      let spots = { spots: 5 }
+      for (const appointment of day.appointments) {
+        if (interviews.includes(appointment)) {
+          spots.spots--
+        }
+      }
+
+      setState(prev => ({ ...prev, spots }))
+    }
+  }
+
   function bookInterview (id, interview) {
     const appointment = {
       ...state.appointments[id],
@@ -48,12 +69,13 @@ export default function useApplicationData () {
   appointments
 })
 			)
+			.then(updateSpots())
 
     return promise
   }
 
   function cancelInterview (id) {
-    const promise = axios.delete('/api/appointments/' + id)
+    const promise = axios.delete('/api/appointments/' + id).then(updateSpots())
 
     return promise
   }
