@@ -26,7 +26,7 @@ export default function Application (props) {
   return (
     <main className='layout'>
       <section className='sidebar'>
-        <DayList days={days} day={day} setDay={setDay} />
+        <DayList days={days} value={day} onChange={setDay} />
       </section>
       <section className='schedule'>
         {/* Replace this with the schedule elements durint the "The Scheduler" activity. */}
