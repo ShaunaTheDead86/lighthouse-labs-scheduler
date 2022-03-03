@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import 'components/Application.scss'
 import DayList from 'components/dayList'
 
 export default function Application (props) {
+  const [day, setDay] = useState('Monday')
   const days = [
     {
       id: 1,
@@ -25,7 +26,7 @@ export default function Application (props) {
   return (
     <main className='layout'>
       <section className='sidebar'>
-        <DayList days={days} day={'Monday'} setDay={day => console.log(day)} />
+        <DayList days={days} day={day} setDay={setDay} />
       </section>
       <section className='schedule'>
         {/* Replace this with the schedule elements durint the "The Scheduler" activity. */}
