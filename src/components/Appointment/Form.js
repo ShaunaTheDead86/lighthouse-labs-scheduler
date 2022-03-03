@@ -14,6 +14,7 @@ export default function Form (props) {
 
   function cancel () {
     reset()
+    setError('')
     props.onCancel()
   }
 
@@ -23,6 +24,7 @@ export default function Form (props) {
       return
     }
 
+    setError('')
     props.onSave(student, interviewer)
   }
 
