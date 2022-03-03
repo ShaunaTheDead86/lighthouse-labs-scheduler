@@ -11,3 +11,26 @@ export function getAppointmentsForDay (state, day) {
 
   return results
 }
+
+export function getInterview (state, interviewer) {
+  const results = Object.values(state.interviewers).filter(stateInterviewer => {
+    if (stateInterviewer !== null && interviewer !== null) {
+      return stateInterviewer.id === interviewer.interviewer
+    }
+  })
+
+  if (results.length === 0) {
+    return null
+  }
+
+  return { interviewer: results[0], student: interviewer.student }
+}
+
+// {
+//   "student": "Lydia Miller-Jones",
+//   "interviewer": {
+//     "id": 1,
+//     "name": "Sylvia Palmer",
+//     "avatar": "https://i.imgur.com/LpaY82x.png"
+//   }
+// }
