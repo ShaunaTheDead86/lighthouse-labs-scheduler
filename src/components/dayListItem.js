@@ -26,7 +26,7 @@ export default function DayListItem (props) {
         {props.name}
       </h2>
       <h3 className='text--light'>
-        {formatSpots()}
+        {formatSpots}
       </h3>
     </li>
   )

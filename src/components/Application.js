@@ -1,16 +1,35 @@
-import React from "react";
+import React from 'react'
 
-import "components/Application.scss";
+import 'components/Application.scss'
+import DayList from 'components/dayList'
 
-export default function Application(props) {
+export default function Application (props) {
+  const days = [
+    {
+      id: 1,
+      name: 'Monday',
+      spots: 2
+    },
+    {
+      id: 2,
+      name: 'Tuesday',
+      spots: 5
+    },
+    {
+      id: 3,
+      name: 'Wednesday',
+      spots: 0
+    }
+  ]
+
   return (
-    <main className="layout">
-      <section className="sidebar">
-        {/* Replace this with the sidebar elements during the "Project Setup & Familiarity" activity. */}
+    <main className='layout'>
+      <section className='sidebar'>
+        <DayList days={days} day={'Monday'} setDay={day => console.log(day)} />
       </section>
-      <section className="schedule">
+      <section className='schedule'>
         {/* Replace this with the schedule elements durint the "The Scheduler" activity. */}
       </section>
     </main>
-  );
+  )
 }
