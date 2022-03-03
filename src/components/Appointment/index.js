@@ -42,8 +42,6 @@ export default function Appointment (props) {
     promise.then(res => transition(EMPTY)).catch(err => console.log(err))
   }
 
-  function queueEdit () {}
-
   return (
     <article className='appointment'>
       <Header time={props.time} />
@@ -55,7 +53,7 @@ export default function Appointment (props) {
 						props.interview !== null ? props.interview.interviewer : ''
 					}
         onDelete={() => transition(CONFIRM)}
-        onEdit={() => queueEdit(props.id)}
+        onEdit={() => transition(EDIT)}
 				/>}
       {mode === CREATE &&
       <Form
@@ -65,6 +63,8 @@ export default function Appointment (props) {
 				/>}
       {mode === EDIT &&
       <Form
+        student={props.interview.student}
+        interviewer={props.interview.interviewer.id}
         interviewers={props.interviewers}
         onCancel={() => back()}
         onConfirm={queueSave}
