@@ -17,6 +17,7 @@ export function getInterview (state, interviewer) {
     if (stateInterviewer !== null && interviewer !== null) {
       return stateInterviewer.id === interviewer.interviewer
     }
+    return null
   })
 
   if (results.length === 0) {
@@ -25,12 +26,3 @@ export function getInterview (state, interviewer) {
 
   return { interviewer: results[0], student: interviewer.student }
 }
-
-// {
-//   "student": "Lydia Miller-Jones",
-//   "interviewer": {
-//     "id": 1,
-//     "name": "Sylvia Palmer",
-//     "avatar": "https://i.imgur.com/LpaY82x.png"
-//   }
-// }
