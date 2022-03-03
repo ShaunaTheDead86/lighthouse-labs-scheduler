@@ -65,7 +65,7 @@ export default function Appointment (props) {
       <Form
         interviewers={props.interviewers}
         onCancel={() => back()}
-        onConfirm={queueSave}
+        onSave={queueSave}
 				/>}
       {mode === EDIT &&
       <Form
@@ -73,7 +73,7 @@ export default function Appointment (props) {
         interviewer={props.interview.interviewer.id}
         interviewers={props.interviewers}
         onCancel={() => back()}
-        onConfirm={queueSave}
+        onSave={queueSave}
 				/>}
       {mode === SAVING && <Status message='Saving' />}
       {mode === DELETING && <Status message='Deleting' />}
