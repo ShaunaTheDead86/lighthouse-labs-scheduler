@@ -55,15 +55,12 @@ export default function Application (props) {
   appointments
 })
 			)
-			.catch(err => console.log(err))
 
     return promise
   }
 
   function deleteInterview (id) {
-    const promise = axios
-			.delete('/api/appointments/' + id)
-			.catch(err => console.log(err))
+    const promise = axios.delete('/api/appointments/' + id)
 
     return promise
   }

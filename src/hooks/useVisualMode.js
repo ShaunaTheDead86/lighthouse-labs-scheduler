@@ -16,15 +16,16 @@ export default function useVisualMode (initialMode) {
   }
 
   function back () {
-    const newHistory = history.slice(0, history.length - 1)
+    const newHistory = history.slice()
 
-    setHistory(newHistory)
-
-    if (newHistory.length !== 0) {
+    if (newHistory.length > 1) {
+      newHistory.pop()
       setMode(newHistory[newHistory.length - 1])
     } else {
       setMode(history[0])
     }
+
+    setHistory(newHistory)
   }
 
   return { mode, transition, back }
