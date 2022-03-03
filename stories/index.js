@@ -6,10 +6,17 @@ import { action } from '@storybook/addon-actions'
 import 'index.scss'
 
 import Button from 'components/Button'
-import DayListItem from 'components/dayListItem'
-import DayList from 'components/dayList'
-import InterviewerListItem from 'components/interviewerListItem'
-import InterviewerList from 'components/interviewerList'
+import DayListItem from 'components/DayListItem'
+import DayList from 'components/DayList'
+import InterviewerListItem from 'components/InterviewerListItem'
+import InterviewerList from 'components/InterviewerList'
+import Appointment from 'components/Appointment/index'
+import Header from 'components/Appointment/Header'
+import Empty from 'components/Appointment/Empty'
+import Show from 'components/Appointment/Show'
+import Confirm from 'components/Appointment/Confirm'
+import Status from 'components/Appointment/Status'
+import Error from 'components/Appointment/Error'
 
 storiesOf('Button', module)
 	.addParameters({
@@ -133,5 +140,36 @@ storiesOf('InterviewerList', module)
   <InterviewerList
     interviewers={interviewers}
     onChange={action('setInterviewer')}
+		/>
+	)
+
+storiesOf('Appointment', module)
+	.addParameters({
+  backgrounds: [{ name: 'white', value: '#fff', default: true }]
+})
+	.add('Appointment', () => <Appointment />)
+	.add('Appointment with Time', () => <Appointment time='12pm' />)
+	.add('Header', () => <Header time='12pm' />)
+	.add('Empty', () => <Empty onAdd={action('onAdd')} />)
+	.add('Show', () =>
+  <Show
+    onEdit={action('onEdit')}
+    onDelete={action('onDelete')}
+    student='Lydia Miller-Jones'
+    interviewer={interviewer}
+		/>
+	)
+	.add('Confirm', () =>
+  <Confirm
+    message='Delete the appointment?'
+    onConfirm={action('onConfirm')}
+    onCancel={action('onCancel')}
+		/>
+	)
+	.add('Status', () => <Status message='Deleting' />)
+	.add('Error', () =>
+  <Error
+    message='Could not delete the appointment'
+    onClose={action('onClose')}
 		/>
 	)
