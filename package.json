@@ -9,7 +9,8 @@
 		"normalize.css": "^8.0.1",
 		"react": "^16.9.0",
 		"react-dom": "^16.9.0",
-		"react-scripts": "3.0.0"
+		"react-scripts": "3.0.0",
+		"react-test-renderer": "^17.0.2"
 	},
 	"scripts": {
 		"start": "react-scripts start",
@@ -20,11 +21,7 @@
 		"build-storybook": "build-storybook -s public"
 	},
 	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
+		"production": [">0.2%", "not dead", "not op_mini all"],
 		"development": [
 			"last 1 chrome version",
 			"last 1 firefox version",
@@ -46,9 +43,6 @@
 		"prop-types": "^15.8.1"
 	},
 	"jest": {
-		"watchPathIgnorePatterns": [
-			"<rootDir>/node_modules/",
-			"<rootDir>/.git/"
-		]
+		"watchPathIgnorePatterns": ["<rootDir>/node_modules/", "<rootDir>/.git/"]
 	}
 }
