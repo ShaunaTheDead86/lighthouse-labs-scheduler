@@ -1,12 +1,32 @@
 # Interview Scheduler
 
-![](/docs/scheduler-new-interview.gif)
+## Interview Scheduler features a menu that displays available days to schedule and dynamically renders interviews when a new day is clicked
+
 ![](/docs/scheduler-menu.gif)
-![](/docs/scheduler-input-validation.gif)
+
+## Clicking in an empty interview slot instantly brings up a form to submit a new interview
+
+![](/docs/scheduler-new-interview.gif)
+
+## Clicking on the edit button of an already booked interview allows you to edit it, with the form fields being dynamically populated from the database
+
 ![](/docs/scheduler-edit-interview.gif)
+
+## Clicking on the delete button of an already booked interview allows you to delete it, but first it will ask you for confirmation to ensure it was not by mistake!
+
 ![](/docs/scheduler-delete-interview.gif)
-![](/docs/scheduler-delete-error.gif)
+
+## Trying to submit a form will trigger input validation to ensure required fields are filled in
+
+![](/docs/scheduler-input-validation.gif)
+
+## In the event that errors occur during the create, edit, or delete interview process, the user will be presented with an appropriate error message
+
 ![](/docs/scheduler-create-error.gif)
+
+![](/docs/scheduler-delete-error.gif)
+
+
 
 ## Setup
 
