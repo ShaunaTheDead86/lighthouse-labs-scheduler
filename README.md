@@ -22,11 +22,11 @@
 
 ![Clicking on the delete button of an already booked interview allows you to delete it, but first it will ask you for confirmation to ensure it was not by mistake!](/docs/scheduler-delete-interview.gif)
 
-### Trying to submit a form will trigger input validation to ensure required fields are filled in
+#### Trying to submit a form will trigger input validation to ensure required fields are filled in
 
 ![Trying to submit a form will trigger input validation to ensure required fields are filled in](/docs/scheduler-input-validation.gif)
 
-### In the event that errors occur during the create, edit, or delete interview process, the user will be presented with an appropriate error message
+#### In the event that errors occur during the create, edit, or delete interview process, the user will be presented with an appropriate error message
 
 ![In the event that errors occur during the create, or edit interview process, the user will be presented with an appropriate error message](/docs/scheduler-create-error.gif)
 
