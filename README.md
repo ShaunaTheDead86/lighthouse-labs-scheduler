@@ -35,11 +35,12 @@
 ## Scheduler API server required
 
 Please also clone the API server found here: https://github.com/ShaunaTheDead86/scheduler-api
+
 You must be running the API server in a separate terminal for the Scheduler app to be able to access the database
 
 ## Dependencies
 
-The following dependencies are used in the Scheduler project: Axios, React, Cypress, Babel, Storybook, Jest, React, and Sass
+The following are used in the Scheduler project: Axios, React, Cypress, Babel, Storybook, Jest, React, and Sass
 
 ## Setup
 
