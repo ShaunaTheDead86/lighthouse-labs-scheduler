@@ -14,6 +14,8 @@
 		"react-test-renderer": "^17.0.2"
 	},
 	"scripts": {
+		"reset": "psql -U development -d scheduler_development < ./scheduler-api/src/db/schema/create.sql && psql -U development -d scheduler_development < ./scheduler-api/src/db/schema/development.sql",
+		"local": "node ./scheduler-api/src/index.js",
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
