@@ -75,7 +75,7 @@ export default function useApplicationData() {
 
 		// make a put axios call
 		const promise = axios
-			.put('/api/appointments/' + id, { interview })
+			.put(targetURL + '/api/appointments/' + id, { interview })
 			.then((res) => {
 				// call updateSpots and store the days state
 				const days = updateSpots();
